@@ -1,0 +1,107 @@
+{
+  "name": "build",
+  "version": "0.0.1",
+  "description": "Build",
+  "public": false,
+  "main": "./src",
+  "scripts": {
+    "build": "webpack --config webpack.build.config.babel.js --colors",
+    "start": "webpack-dev-server --config webpack.build.config.babel.js",
+    "test:dev": "jest --watch --notify",
+    "test:ci": "jest",
+    "lint:js": "eslint .",
+    "lint:scss": "sass-lint --config .sass-lint.yml --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.vibes.com:front-end/vibes-ui.git"
+  },
+  "author": "Douglas Meyer <me@douglas-meyer.name>",
+  "jest": {
+    "setupFiles": [
+      "./test/config.js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "^vibes-ui/(.*)$": "<rootDir>/src/$1",
+      "^flatpickr$": "<rootDir>/src/flatpickr",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svg$": "<rootDir>/test/mockSVG.js"
+    }
+  },
+  "devDependencies": {
+    "add-asset-html-webpack-plugin": "^2.0",
+    "babel-preset-flow": "*",
+    "chai": "^4.1",
+    "css-module-flow": "*",
+    "eslint": "^4.11",
+    "eslint-config-airbnb-base": "^11",
+    "eslint-config-standard-react": "*",
+    "eslint-import-resolver-webpack": "^0.8",
+    "eslint-plugin-flowtype": "*",
+    "eslint-plugin-import": "^2.2",
+    "eslint-plugin-jest": "^21.3",
+    "eslint-plugin-react": "^7.4",
+    "flow-bin": "*",
+    "flow-runtime": "*",
+    "flow-typed": "*",
+    "history": "^4.6",
+    "identity-obj-proxy": "^3.0",
+    "jest": "^21",
+    "lz-string": "^1.4.4",
+    "react-hot-loader": "^4.0",
+    "react-test-renderer": "*",
+    "regenerator-runtime": "^0.11",
+    "sass-lint": "*",
+    "sass.js": "^0.10",
+    "sinon": "^4.1",
+    "sinon-chai": "^2.9",
+    "webpack-dev-server": "^2"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.2",
+    "babel-core": "^6.24",
+    "babel-eslint": "^8.0",
+    "babel-jest": "^21",
+    "babel-loader": "^7.1",
+    "babel-plugin-transform-object-assign": "^6.22",
+    "babel-plugin-transform-remove-strict-mode": "^0.0",
+    "babel-preset-es2015": "^6.24",
+    "babel-preset-react": "^6.23",
+    "babel-preset-stage-0": "^6.22",
+    "babel-standalone": "^6.24",
+    "classnames": "^2.2",
+    "codemirror": "^5.14",
+    "copy-webpack-plugin": "^4.0",
+    "css-loader": "^0.28",
+    "expose-loader": "^0.7",
+    "extract-text-webpack-plugin": "^3.0",
+    "flatpickr": "4.1",
+    "glob": "^7.1",
+    "html-webpack-plugin": "*",
+    "imports-loader": "*",
+    "lodash.size": "^4.2.0",
+    "markdown-to-jsx": "*",
+    "moment": "^2.18",
+    "node-sass": "^4.9.0",
+    "prop-types": "^15.6",
+    "raw-loader": "^0.5",
+    "react": "*",
+    "react-dom": "*",
+    "react-popper": "*",
+    "sass-loader": "^6.0.7",
+    "script-loader": "^0.7",
+    "string_score": "^0.1",
+    "style-loader": "*",
+    "svg-jsx-loader": "^0.0",
+    "webpack": "^3"
+  }
+}

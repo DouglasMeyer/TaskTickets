@@ -1,0 +1,56 @@
+html, body, #root {
+  height: 100%;
+}
+
+html {
+  font-size: 20pt;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #222;
+  color: #DDD;
+  overflow: hidden;
+}
+
+/* #root {
+  padding: 1em 3em;
+} */
+
+h1 {
+  font-size: 4rem;
+}
+
+button, input {
+  box-sizing: border-box;
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  font-size: inherit;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  /* margin-right: 2em; */
+  visibility: hidden;
+}
+input[type="checkbox"]::after {
+  content: " ";
+  display: inline-block;
+  visibility: visible;
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  border-radius: 3px;
+  border: 1px solid #888;
+  /* vertical-align: middle; */
+  color: #DDD;
+  text-align: center;
+  line-height: 1.088;
+}
+input[type="checkbox"]:checked::after {
+  content: "✔";
+}

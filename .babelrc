@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "flow",
+    [ "es2015", { "modules": false } ],
+    "stage-0",
+    "react"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

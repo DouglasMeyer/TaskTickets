@@ -1,0 +1,84 @@
+.TaskTickets {
+  height: 100%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+  grid-gap: 1px;
+  align-items: center;
+  /* justify-items: center; */
+  /* background-color: #CCC; */
+}
+
+.People {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.People > .Person {
+  flex-grow: 1;
+  max-height: calc((100% - 4rem) / 3);
+}
+
+.Person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+  justify-content: flex-end;
+  padding-right: 2em;
+  font-size: 4em;
+  background-image: linear-gradient(rgba(100%,100%,100%, 0.01), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));
+  /* background-color: #333; */
+  /* margin-top: 1em; */
+  /* margin-bottom: 1em; */
+}
+/* .Person + .Person {
+  box-shadow: 0 -1px #888;
+} */
+
+.SelectedPerson {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .SelectedPerson > .Task {
+  flex-grow: 1;
+} */
+
+.SelectedPerson > .Tasks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* .SelectedPerson .Tickets {
+  float: right;
+} */
+
+.Task, .SpendTicket {
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  /* background: radial-gradient(ellipse 50% 50%, rgba(currentColor, 0.8), rgba(#444, 0.8), rgba(#444, 0.2)); */
+}
+.Task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-image: linear-gradient(rgba(#444, 0.2), rgba(#444, 0.8), rgba(#444, 0.2)); */
+  /* background: radial-gradient(rgba(#444, 0.8), rgba(#444, 0.2)) no-repeat; */
+  background: radial-gradient(ellipse 50% 50%, rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));
+}
+.SpendTicket {
+  background: radial-gradient(ellipse 50% 50%, rgba(100%,0%,0%, 0.3), rgba(100%,0%,0%, 0.3), rgba(100%,100%,100%, 0.01));
+}
+/* .Task + .Task {
+  box-shadow: 0 -1px #888;
+} */

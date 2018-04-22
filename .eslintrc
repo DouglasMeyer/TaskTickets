@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "jest/globals": true,
+    "browser": true
+  },
+  "extends": [
+    "airbnb-base",
+    "standard-react",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "jest",
+    "eslint-plugin-flowtype"
+  ],
+  "rules": {
+    "comma-dangle": "off",
+    "jsx-quotes": ["error", "prefer-double"],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true
+    }],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "flowtype/require-valid-file-annotation": [ "warn", "always", { "annotationStyle": "line" } ],
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.build.config.babel.js"
+      }
+    }
+  }
+}

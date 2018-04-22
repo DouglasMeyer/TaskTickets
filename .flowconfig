@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+module.name_mapper.extension='scss' -> 'css-module-flow'
+module.name_mapper='^computech' -> '<PROJECT_ROOT>/src'
+suppress_comment=\\(.\\|\n\\)*flow-disable-next:
