@@ -9,8 +9,7 @@
     "start": "webpack-dev-server --config webpack.build.config.babel.js",
     "test:dev": "jest --watch --notify",
     "test:ci": "jest",
-    "lint:js": "eslint .",
-    "lint:scss": "sass-lint --config .sass-lint.yml --verbose"
+    "lint:js": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -60,8 +59,6 @@
     "react-hot-loader": "^4.0",
     "react-test-renderer": "*",
     "regenerator-runtime": "^0.11",
-    "sass-lint": "*",
-    "sass.js": "^0.10",
     "sinon": "^4.1",
     "sinon-chai": "^2.9",
     "webpack-dev-server": "^2"
@@ -91,13 +88,11 @@
     "lodash.size": "^4.2.0",
     "markdown-to-jsx": "*",
     "moment": "^2.18",
-    "node-sass": "^4.9.0",
     "prop-types": "^15.6",
     "raw-loader": "^0.5",
     "react": "*",
     "react-dom": "*",
     "react-popper": "*",
-    "sass-loader": "^6.0.7",
     "script-loader": "^0.7",
     "string_score": "^0.1",
     "style-loader": "*",

@@ -1,10 +1,7 @@
 // @flow
+/* eslint-disable no-plusplus */
 import { PureComponent } from 'react';
 import classNamesBind from 'classnames/bind';
-
-// import Menu from './Menu';
-// import type { Cell as CellType } from './Cell/index';
-// import Cell from './Cell';
 
 const classNames = classNamesBind.bind(require('./TaskTickets.css'));
 
@@ -94,17 +91,20 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
   handleRedeem = () => {
     this.props.onRedeem(this.props.person.name);
   }
+  handleClose = () => {
+    this.props.onSelectPerson();
+  }
 
   render() {
     const {
       person: { name, taskCompletions, redemptions, personalTasks },
-      commonTasks, onSelectPerson
+      commonTasks
     } = this.props;
     const tickets = taskCompletions.length - redemptions.length;
     const today = new Date();
 
     return <div className={classNames('SelectedPerson')}>
-      <div style={{ position: 'absolute', top: '1em', right: '1em' }} onClick={onSelectPerson}>╳</div>
+      <div style={{ position: 'absolute', top: '1em', right: '1em' }} onClick={this.handleClose}>╳</div>
       <h1>
         {name}
         <span style={{ float: 'right' }}>{tickets}🎟</span>
@@ -121,7 +121,7 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
             />
           )
         }
-        { tickets
+        { tickets > 0
           ? <div className={classNames('SpendTicket')} onClick={this.handleRedeem}>
             🎟 Spend Ticket
           </div>
@@ -138,54 +138,49 @@ type State = {
   selectedPersonName: string | null
 }
 
-let nextTaskId = 1;
-const read = {
-  id: nextTaskId++, // eslint-disable-line no-plusplus
-  title: 'Read 30min'
-};
-const create = {
-  id: nextTaskId++, // eslint-disable-line no-plusplus
-  title: 'Create 30min'
-};
-const mom = {
-  id: nextTaskId++, // eslint-disable-line no-plusplus
-  title: 'Do one job for Mom'
-};
-export default class TaskTickets extends PureComponent<{}, State> {
-  state:State = {
-    commonTasks: [
-      { id: nextTaskId++, // eslint-disable-line no-plusplus
-        title: 'Sleep'
-      },
-      { id: nextTaskId++, // eslint-disable-line no-plusplus
-        title: 'Dressed / Brush Teeth'
-      },
-      { id: nextTaskId++, // eslint-disable-line no-plusplus
-        title: 'Pick-up Room'
-      },
-    ],
-    people: [
-      { name: 'Calvin',
-        personalTasks: [read, create, mom],
-        taskCompletions: [],
-        redemptions: []
-      },
-      { name: 'Norah',
-        personalTasks: [read, create, mom],
-        taskCompletions: [],
-        redemptions: []
-      },
-      { name: 'Caroline',
-        personalTasks: [],
-        taskCompletions: [],
-        redemptions: []
-      }
-    ],
-    selectedPersonName: null
+function initState() {
+  const storeItem = localStorage.getItem('TaskTickets_state');
+  if (storeItem) {
+    const { commonTasks, people } = JSON.parse(storeItem);
+    return {
+      commonTasks,
+      people: people.map(({ name, personalTasks, taskCompletions, redemptions }) => ({
+        name,
+        personalTasks,
+        taskCompletions: taskCompletions.map(({ taskId, when }) => ({
+          taskId, when: new Date(when)
+        })),
+        redemptions: redemptions.map(d => new Date(d))
+      })),
+      selectedPersonName: null
+    };
   }
 
+  let nextTaskId = 1;
+  const bigKidTasks = [
+    { id: nextTaskId++, title: 'Read 30 min' },
+    { id: nextTaskId++, title: 'Create 30 min' },
+    { id: nextTaskId++, title: "Mom's Choice" }
+  ];
+  return {
+    commonTasks: [
+      { id: nextTaskId++, title: 'Dressed / Brush Teeth / Pick-up Room' },
+      { id: nextTaskId++, title: 'Be Active 30 min' },
+    ],
+    people: [
+      { name: 'Calvin', personalTasks: bigKidTasks, taskCompletions: [], redemptions: [] },
+      { name: 'Norah', personalTasks: bigKidTasks, taskCompletions: [], redemptions: [] },
+      { name: 'Caroline', personalTasks: [], taskCompletions: [], redemptions: [] }
+    ],
+    selectedPersonName: null
+  };
+}
+
+export default class TaskTickets extends PureComponent<{}, State> {
+  state:State = initState()
+
   handleSelectPerson = (selectedPersonName?: string) => {
-    this.setState({ selectedPersonName });
+    this.setState({ selectedPersonName }, this.persistState);
   }
   handleComplete = (personName: string, taskId: number) => {
     this.setState(({ people }) => {
@@ -205,7 +200,7 @@ export default class TaskTickets extends PureComponent<{}, State> {
           ...people.slice(personIndex + 1)
         ]
       };
-    });
+    }, this.persistState);
   }
   handleUnComplete = (personName: string, taskId: number) => {
     const today = new Date();
@@ -231,7 +226,7 @@ export default class TaskTickets extends PureComponent<{}, State> {
           ...people.slice(personIndex + 1)
         ]
       };
-    });
+    }, this.persistState);
   }
   handleRedeem = (personName: string) => {
     this.setState(({ people }) => {
@@ -251,7 +246,12 @@ export default class TaskTickets extends PureComponent<{}, State> {
           ...people.slice(personIndex + 1)
         ]
       };
-    });
+    }, this.persistState);
+  }
+
+  persistState() {
+    console.log('persistState');
+    localStorage.setItem('TaskTickets_state', JSON.stringify(this.state));
   }
 
   render() {
