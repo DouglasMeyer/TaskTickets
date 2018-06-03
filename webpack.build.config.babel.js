@@ -28,7 +28,8 @@ const devServer = {
   publicPath: output.publicPath,
   hot: true,
   quiet: true,
-  historyApiFallback: { index: output.publicPath }
+  historyApiFallback: { index: output.publicPath },
+  disableHostCheck: true
 };
 
 const entry:Object = {

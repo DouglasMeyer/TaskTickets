@@ -5,43 +5,38 @@ import classNamesBind from 'classnames/bind';
 
 const classNames = classNamesBind.bind(require('./TaskTickets.css'));
 
-// function firstOccurrance(item, index, array) {
-//   return array.indexOf(item) === index;
-// }
-
-// const mod = (x, n) => ((x % n) + n) % n;
-
-type TaskType = {
-  id: number,
-  title: string
-}
-
-type TaskCompletionType = {
-  taskId: number,
-  when: Date
-}
-
 type PersonType = {
-  name: string,
-  personalTasks: Array<TaskType>,
-  taskCompletions: Array<TaskCompletionType>,
+  tasks: Array<number>,
+  taskCompletions: {| [taskId: number]: Array<Date> |},
   redemptions: Array<Date>
+}
+
+type State = {
+  tasks: {| [taskId: number]: string |},
+  people: { [name: string]: PersonType },
+  selectedPersonName: string | null
 }
 
 type PersonProps = {
   person: PersonType,
+  name: string,
   onSelectPerson: (personName: string) => void
 }
 
 class Person extends PureComponent<PersonProps> {
   handleClick = () => {
-    const { person: { name }, onSelectPerson } = this.props;
+    const { name, onSelectPerson } = this.props;
     onSelectPerson(name);
   }
 
   render() {
-    const { person: { name, taskCompletions, redemptions } } = this.props;
-    const tickets = taskCompletions.length - redemptions.length;
+    const { name, person: { taskCompletions, redemptions } } = this.props;
+    const today = new Date().toDateString();
+    const todaysCompletions = Object.values(taskCompletions)
+      .reduce((a, b) => a.concat(b), [])
+      .filter((d:any) => d.toDateString() === today);
+    const todaysRedemptions = redemptions.filter(d => d.toDateString() === today);
+    const tickets = todaysCompletions.length - todaysRedemptions.length;
 
     return <div className={classNames('Person')} onClick={this.handleClick}>
       <h1>{name}</h1> &nbsp; {tickets}🎟 &nbsp; →
@@ -50,31 +45,33 @@ class Person extends PureComponent<PersonProps> {
 }
 
 type TaskProps = {
-  task: TaskType,
-  taskCompletion?: TaskCompletionType,
+  task: string,
+  taskId: number,
+  taskCompletion?: Date,
   onComplete: (taskId: number) => void,
   onUnComplete: (taskId: number) => void
 }
 
 class Task extends PureComponent<TaskProps> {
   handleChange = () => {
-    const { task: { id }, taskCompletion, onComplete, onUnComplete } = this.props;
+    const { taskId, taskCompletion, onComplete, onUnComplete } = this.props;
     const handler = taskCompletion ? onUnComplete : onComplete;
-    handler(id);
+    handler(taskId);
   }
 
   render() {
-    const { task: { title }, taskCompletion } = this.props;
+    const { task, taskCompletion } = this.props;
     return <div className={classNames('Task')} onClick={this.handleChange}>
       <input type="checkbox" checked={!!taskCompletion} readOnly />
-      {title}
+      {task}
     </div>;
   }
 }
 
 type SelectedPersonProps = {
+  name: string,
   person: PersonType,
-  commonTasks: Array<TaskType>,
+  tasks: $PropertyType<State, 'tasks'>,
   onComplete: (personName: string, taskId: number) => void,
   onUnComplete: (personName: string, taskId: number) => void,
   onSelectPerson: (personName?: string) => void,
@@ -83,13 +80,16 @@ type SelectedPersonProps = {
 
 class SelectedPerson extends PureComponent<SelectedPersonProps> {
   handleComplete = (taskId: number) => {
-    this.props.onComplete(this.props.person.name, taskId);
+    const { name, onComplete } = this.props;
+    onComplete(name, taskId);
   }
   handleUnComplete = (taskId: number) => {
-    this.props.onUnComplete(this.props.person.name, taskId);
+    const { name, onUnComplete } = this.props;
+    onUnComplete(name, taskId);
   }
   handleRedeem = () => {
-    this.props.onRedeem(this.props.person.name);
+    const { name, onRedeem } = this.props;
+    onRedeem(name);
   }
   handleClose = () => {
     this.props.onSelectPerson();
@@ -97,11 +97,16 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
 
   render() {
     const {
-      person: { name, taskCompletions, redemptions, personalTasks },
-      commonTasks
+      name,
+      tasks,
+      person: { taskCompletions, redemptions, tasks: personTasks },
     } = this.props;
-    const tickets = taskCompletions.length - redemptions.length;
-    const today = new Date();
+    const today = new Date().toDateString();
+    const todaysCompletions = Object.values(taskCompletions)
+      .reduce((a, b) => a.concat(b), [])
+      .filter((d:any) => d.toDateString() === today);
+    const todaysRedemptions = redemptions.filter(d => d.toDateString() === today);
+    const tickets = todaysCompletions.length - todaysRedemptions.length;
 
     return <div className={classNames('SelectedPerson')}>
       <div style={{ position: 'absolute', top: '1em', right: '1em' }} onClick={this.handleClose}>╳</div>
@@ -110,11 +115,11 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
         <span style={{ float: 'right' }}>{tickets}🎟</span>
       </h1>
       <div className={classNames('Tasks')}>
-        { commonTasks.concat(personalTasks)
-          .map(task =>
-            <Task key={task.title} task={task}
-              taskCompletion={taskCompletions.find(({ taskId, when }) =>
-                taskId === task.id && when.toDateString() === today.toDateString()
+        { personTasks
+          .map(taskId =>
+            <Task key={taskId} task={tasks[taskId]} taskId={taskId}
+              taskCompletion={(taskCompletions[taskId] || []).find(when =>
+                when.toDateString() === today
               )}
               onComplete={this.handleComplete}
               onUnComplete={this.handleUnComplete}
@@ -132,48 +137,53 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
   }
 }
 
-type State = {
-  commonTasks: Array<TaskType>,
-  people: Array<PersonType>,
-  selectedPersonName: string | null
+function mapObject(obj, fn) {
+  return Object.keys(obj)
+    .reduce((newObj, key) => ({ ...newObj, [key]: fn(obj[key]) }), {});
+}
+
+function defaultState() {
+  let nextTaskId = 1;
+  const sharedTasks = {
+    [nextTaskId++]: 'Dressed / Brush Teeth / Pick-up Room',
+    [nextTaskId++]: 'Be Active 30 min',
+  };
+  const bigKidTasks = {
+    [nextTaskId++]: 'Read 30 min',
+    [nextTaskId++]: 'Create 30 min',
+    [nextTaskId++]: "Mom's Choice",
+  };
+  const tasks = {
+    ...sharedTasks,
+    ...bigKidTasks
+  };
+  const taskCompletions:$PropertyType<PersonType, 'taskCompletions'> = { [1 + 0]: [] };
+  const redemptions = [];
+  const Calvin:PersonType = { tasks: Object.keys(tasks), taskCompletions, redemptions };
+  const Norah:PersonType = { tasks: Object.keys(tasks), taskCompletions, redemptions };
+  const Caroline:PersonType = { tasks: Object.keys(sharedTasks), taskCompletions, redemptions };
+  const people:$PropertyType<State, 'people'> = { Calvin, Norah, Caroline };
+  return { tasks, people, selectedPersonName: null };
 }
 
 function initState() {
-  const storeItem = localStorage.getItem('TaskTickets_state');
-  if (storeItem) {
-    const { commonTasks, people } = JSON.parse(storeItem);
-    return {
-      commonTasks,
-      people: people.map(({ name, personalTasks, taskCompletions, redemptions }) => ({
-        name,
-        personalTasks,
-        taskCompletions: taskCompletions.map(({ taskId, when }) => ({
-          taskId, when: new Date(when)
-        })),
+  let state;
+  try {
+    const storeItem = localStorage.getItem('TaskTickets_state');
+    if (storeItem) {
+      const { tasks: jsonTasks, people: jsonPeople } = JSON.parse(storeItem);
+      const people:$PropertyType<State, 'people'> = mapObject(jsonPeople, ({ tasks, taskCompletions, redemptions }) => ({
+        tasks,
+        taskCompletions: mapObject(taskCompletions, tcs => tcs.map(d => new Date(d))),
         redemptions: redemptions.map(d => new Date(d))
-      })),
-      selectedPersonName: null
-    };
-  }
+      }));
 
-  let nextTaskId = 1;
-  const bigKidTasks = [
-    { id: nextTaskId++, title: 'Read 30 min' },
-    { id: nextTaskId++, title: 'Create 30 min' },
-    { id: nextTaskId++, title: "Mom's Choice" }
-  ];
-  return {
-    commonTasks: [
-      { id: nextTaskId++, title: 'Dressed / Brush Teeth / Pick-up Room' },
-      { id: nextTaskId++, title: 'Be Active 30 min' },
-    ],
-    people: [
-      { name: 'Calvin', personalTasks: bigKidTasks, taskCompletions: [], redemptions: [] },
-      { name: 'Norah', personalTasks: bigKidTasks, taskCompletions: [], redemptions: [] },
-      { name: 'Caroline', personalTasks: [], taskCompletions: [], redemptions: [] }
-    ],
-    selectedPersonName: null
-  };
+      state = { tasks: jsonTasks, people, selectedPersonName: null };
+    }
+  } catch (e) {
+    console.error('initState error', e);
+  }
+  return state || defaultState();
 }
 
 export default class TaskTickets extends PureComponent<{}, State> {
@@ -184,91 +194,95 @@ export default class TaskTickets extends PureComponent<{}, State> {
   }
   handleComplete = (personName: string, taskId: number) => {
     this.setState(({ people }) => {
-      const person = people.find(({ name }) => name === personName);
+      const person = people[personName];
       if (!person) return {};
-      const personIndex = people.indexOf(person);
 
       return {
-        people: [
-          ...people.slice(0, personIndex),
-          { ...person,
-            taskCompletions: [
+        people: {
+          ...people,
+          [personName]: {
+            ...person,
+            taskCompletions: {
               ...person.taskCompletions,
-              { taskId, when: new Date() }
-            ]
-          },
-          ...people.slice(personIndex + 1)
-        ]
+              [taskId]: [
+                ...(person.taskCompletions[taskId] || []),
+                new Date()
+              ]
+            }
+          }
+        }
       };
     }, this.persistState);
   }
   handleUnComplete = (personName: string, taskId: number) => {
     const today = new Date();
     this.setState(({ people }) => {
-      const person = people.find(({ name }) => name === personName);
+      const person = people[personName];
       if (!person) return {};
-      const personIndex = people.indexOf(person);
-      const taskCompletion = person.taskCompletions.find(({ taskId: id, when }) =>
-        id === taskId && when.toDateString() === today.toDateString()
+      const taskCompletion = person.taskCompletions[taskId].find(when =>
+        when.toDateString() === today.toDateString()
       );
       if (!taskCompletion) return {};
-      const taskCompletionIndex = person.taskCompletions.indexOf(taskCompletion);
+      const taskCompletionIndex = person.taskCompletions[taskId].indexOf(taskCompletion);
 
       return {
-        people: [
-          ...people.slice(0, personIndex),
-          { ...person,
-            taskCompletions: [
-              ...person.taskCompletions.slice(0, taskCompletionIndex),
-              ...person.taskCompletions.slice(taskCompletionIndex + 1)
-            ]
-          },
-          ...people.slice(personIndex + 1)
-        ]
+        people: {
+          ...people,
+          [personName]: {
+            ...person,
+            taskCompletions: {
+              ...person.taskCompletions,
+              [taskId]: [
+                ...person.taskCompletions[taskId].slice(0, taskCompletionIndex),
+                ...person.taskCompletions[taskId].slice(taskCompletionIndex + 1)
+              ]
+            }
+          }
+        }
       };
     }, this.persistState);
   }
   handleRedeem = (personName: string) => {
     this.setState(({ people }) => {
-      const person = people.find(({ name }) => name === personName);
+      const person = people[personName];
       if (!person) return {};
-      const personIndex = people.indexOf(person);
 
       return {
-        people: [
-          ...people.slice(0, personIndex),
-          { ...person,
+        people: {
+          ...people,
+          [personName]: {
+            ...person,
             redemptions: [
               ...person.redemptions,
               new Date()
             ]
-          },
-          ...people.slice(personIndex + 1)
-        ]
+          }
+        }
       };
     }, this.persistState);
   }
 
   persistState() {
-    console.log('persistState');
     localStorage.setItem('TaskTickets_state', JSON.stringify(this.state));
   }
 
   render() {
-    const { commonTasks, people, selectedPersonName } = this.state;
-    const selectedPerson = people.find(person => person.name === selectedPersonName);
+    const { tasks, people, selectedPersonName } = this.state;
+    const selectedPerson = selectedPersonName && people[selectedPersonName];
 
     return <div className={classNames('People')}>
-      { people.map(person =>
-        <Person key={person.name}
-          person={person}
+      { Object.keys(people).map(personName =>
+        <Person key={personName}
+          person={people[personName]}
+          name={personName}
           onSelectPerson={this.handleSelectPerson}
         />
       ) }
-      { selectedPerson
+      { selectedPersonName && selectedPerson
         ? <SelectedPerson
           person={selectedPerson}
-          commonTasks={commonTasks}
+          name={selectedPersonName}
+          tasks={tasks}
           onComplete={this.handleComplete}
           onUnComplete={this.handleUnComplete}
           onSelectPerson={this.handleSelectPerson}
