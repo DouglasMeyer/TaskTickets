@@ -20,7 +20,6 @@ const output:Object = {
   path: path.join(__dirname, 'dist'),
   filename: '[name].js'
 };
-if (isDevelopment) output.publicPath = '/static/';
 
 const devServer = {
   host: '0.0.0.0',
