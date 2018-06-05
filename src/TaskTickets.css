@@ -27,8 +27,10 @@
   text-align: center;
 }
 
-.Admin input, .Admin textarea {
+.Admin input, .Admin textarea, .Admin button {
   width: 100%;
+  max-width: 20em;
+  overflow-wrap: break-word;
 }
 
 .Admin textarea {
@@ -40,6 +42,12 @@
   font-size: 1cm;
 }
 
+.Admin > h1 {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .People {
   height: 100%;
   display: flex;
@@ -49,6 +57,7 @@
 .People > .Person {
   flex-grow: 1;
   max-height: calc((100% - 4rem) / 3);
+  white-space: nowrap;
 }
 
 .Person {
@@ -81,6 +90,12 @@
 .SelectedPerson > .Back { grid-area: back; }
 .SelectedPerson > .Tasks { grid-area: tasks; }
 
+.SelectedPerson > h1 {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .SelectedPerson > .Back {
   width: 1.1cm;
   height: 1.1cm;
@@ -102,9 +117,9 @@
   box-shadow: inset 0 0 0.6em 0.6em #222;
 }
 .Task {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
   background-color: hsla(0deg, 0%, 50%, 0.2);
 }
 .SpendTicket {

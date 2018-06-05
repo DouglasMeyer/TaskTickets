@@ -226,7 +226,7 @@ class Admin extends PureComponent<AdminProps, AdminState> {
         ], [])
     ].sort((e1, e2) => e2.when - e1.when);
 
-    return <Fragment>
+    return <div className={classNames('Admin')}>
       <div style={{ position: 'absolute', right: 0 }} onClick={() => this.setState({ selectedPersonName: null })}>╳</div>
       <h1>{personName}</h1>
       {events.map(({ when, what }, index) =>
@@ -242,7 +242,7 @@ class Admin extends PureComponent<AdminProps, AdminState> {
           </div>
         </Fragment>
       )}
-    </Fragment>;
+    </div>;
   }
 
   renderPeople() {
@@ -454,7 +454,7 @@ export default class TaskTickets extends PureComponent<{}, State> {
     this.setState(({ tasks }) => ({
       tasks: {
         ...tasks,
-        [Math.max(...(Object.keys(tasks):any)) + 1]: 'new Task'
+        [Math.max(0, ...(Object.keys(tasks):any)) + 1]: 'new Task'
       }
     }), this.persistState);
   }
