@@ -20,36 +20,33 @@ body {
 
 h1 {
   font-size: 4rem;
+  margin: 0;
 }
 
-button, input {
+button, input, textarea, input[type="checkbox"]::after {
   box-sizing: border-box;
   font-family: inherit;
   color: inherit;
   background-color: transparent;
   font-size: inherit;
   border-radius: 5px;
+  border: 1px solid #555;
 }
 
 input[type="checkbox"] {
   width: 1em;
   height: 1em;
-  /* margin-right: 2em; */
   visibility: hidden;
 }
 input[type="checkbox"]::after {
-  content: " ";
+  content: "⠀"; /* <-- special character */
   display: inline-block;
   visibility: visible;
-  box-sizing: border-box;
   width: 1em;
   height: 1em;
-  border-radius: 3px;
-  border: 1px solid #888;
-  /* vertical-align: middle; */
   color: #DDD;
   text-align: center;
-  line-height: 1.088;
+  line-height: 1em;
 }
 input[type="checkbox"]:checked::after {
   content: "✔";

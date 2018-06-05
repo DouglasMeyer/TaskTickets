@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8ec2642cb653b3c5520f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2bf4d471fd1ae4f9f452"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1034,14 +1034,17 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".TaskTickets__TaskTickets___3pBTC {\n  height: 100%;\n  display: -ms-grid;\n  display: grid;\n  grid-template: repeat(3, 1fr) / 1fr;\n  grid-gap: 1px;\n  -ms-flex-align: center;\n      align-items: center;\n  /* justify-items: center; */\n  /* background-color: #CCC; */\n}\n\n.TaskTickets__People___2wqQ2 {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n.TaskTickets__People___2wqQ2 > .TaskTickets__Person___V2VGa {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-height: calc((100% - 4rem) / 3);\n}\n\n.TaskTickets__Person___V2VGa {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-line-pack: distribute;\n      align-content: space-around;\n  -ms-flex-pack: end;\n      justify-content: flex-end;\n  padding-right: 2em;\n  font-size: 4em;\n  background-image: linear-gradient(rgba(100%,100%,100%, 0.01), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));\n  /* background-color: #333; */\n  /* margin-top: 1em; */\n  /* margin-bottom: 1em; */\n}\n/* .Person + .Person {\n  box-shadow: 0 -1px #888;\n} */\n\n.TaskTickets__SelectedPerson___l98rL {\n  box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%;\n  background-color: #222;\n  padding: 0 1em;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\n/* .SelectedPerson > .Task {\n  flex-grow: 1;\n} */\n\n.TaskTickets__SelectedPerson___l98rL > .TaskTickets__Tasks___3Uq2V {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n\n/* .SelectedPerson .Tickets {\n  float: right;\n} */\n\n.TaskTickets__Task___3nGmz, .TaskTickets__SpendTicket___Wht7Y {\n  padding: 0.5em 1em;\n  margin-bottom: 1em;\n  /* background: radial-gradient(ellipse 50% 50%, rgba(currentColor, 0.8), rgba(#444, 0.8), rgba(#444, 0.2)); */\n}\n.TaskTickets__Task___3nGmz {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  /* background-image: linear-gradient(rgba(#444, 0.2), rgba(#444, 0.8), rgba(#444, 0.2)); */\n  /* background: radial-gradient(rgba(#444, 0.8), rgba(#444, 0.2)) no-repeat; */\n  background: radial-gradient(ellipse 50% 50%, rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));\n}\n.TaskTickets__SpendTicket___Wht7Y {\n  background: radial-gradient(ellipse 50% 50%, rgba(100%,0%,0%, 0.3), rgba(100%,0%,0%, 0.3), rgba(100%,100%,100%, 0.01));\n}\n/* .Task + .Task {\n  box-shadow: 0 -1px #888;\n} */\n", "", {"version":3,"sources":["/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,kBAAkB;EAClB,cAAc;EACd,oCAAoC;EACpC,cAAc;EACd,uBAAuB;MACnB,oBAAoB;EACxB,4BAA4B;EAC5B,6BAA6B;CAC9B;;AAED;EACE,aAAa;EACb,qBAAqB;EACrB,cAAc;EACd,2BAA2B;MACvB,uBAAuB;EAC3B,4BAA4B;MACxB,8BAA8B;CACnC;AACD;EACE,qBAAqB;MACjB,aAAa;EACjB,oCAAoC;CACrC;;AAED;EACE,qBAAqB;EACrB,cAAc;EACd,wBAAwB;MACpB,oBAAoB;EACxB,uBAAuB;MACnB,oBAAoB;EACxB,+BAA+B;MAC3B,4BAA4B;EAChC,mBAAmB;MACf,0BAA0B;EAC9B,mBAAmB;EACnB,eAAe;EACf,qHAAqH;EACrH,6BAA6B;EAC7B,sBAAsB;EACtB,yBAAyB;CAC1B;AACD;;IAEI;;AAEJ;EACE,uBAAuB;EACvB,mBAAmB;EACnB,OAAO;EACP,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,eAAe;EACf,qBAAqB;EACrB,cAAc;EACd,2BAA2B;MACvB,uBAAuB;CAC5B;;AAED;;IAEI;;AAEJ;EACE,qBAAqB;EACrB,cAAc;EACd,2BAA2B;MACvB,uBAAuB;EAC3B,4BAA4B;MACxB,8BAA8B;CACnC;;AAED;;IAEI;;AAEJ;EACE,mBAAmB;EACnB,mBAAmB;EACnB,8GAA8G;CAC/G;AACD;EACE,qBAAqB;EACrB,cAAc;EACd,wBAAwB;MACpB,oBAAoB;EACxB,uBAAuB;MACnB,oBAAoB;EACxB,2FAA2F;EAC3F,8EAA8E;EAC9E,+HAA+H;CAChI;AACD;EACE,uHAAuH;CACxH;AACD;;IAEI","file":"TaskTickets.css","sourcesContent":[".TaskTickets {\n  height: 100%;\n  display: -ms-grid;\n  display: grid;\n  grid-template: repeat(3, 1fr) / 1fr;\n  grid-gap: 1px;\n  -ms-flex-align: center;\n      align-items: center;\n  /* justify-items: center; */\n  /* background-color: #CCC; */\n}\n\n.People {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n.People > .Person {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-height: calc((100% - 4rem) / 3);\n}\n\n.Person {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-line-pack: distribute;\n      align-content: space-around;\n  -ms-flex-pack: end;\n      justify-content: flex-end;\n  padding-right: 2em;\n  font-size: 4em;\n  background-image: linear-gradient(rgba(100%,100%,100%, 0.01), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));\n  /* background-color: #333; */\n  /* margin-top: 1em; */\n  /* margin-bottom: 1em; */\n}\n/* .Person + .Person {\n  box-shadow: 0 -1px #888;\n} */\n\n.SelectedPerson {\n  box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%;\n  background-color: #222;\n  padding: 0 1em;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\n/* .SelectedPerson > .Task {\n  flex-grow: 1;\n} */\n\n.SelectedPerson > .Tasks {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n\n/* .SelectedPerson .Tickets {\n  float: right;\n} */\n\n.Task, .SpendTicket {\n  padding: 0.5em 1em;\n  margin-bottom: 1em;\n  /* background: radial-gradient(ellipse 50% 50%, rgba(currentColor, 0.8), rgba(#444, 0.8), rgba(#444, 0.2)); */\n}\n.Task {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  /* background-image: linear-gradient(rgba(#444, 0.2), rgba(#444, 0.8), rgba(#444, 0.2)); */\n  /* background: radial-gradient(rgba(#444, 0.8), rgba(#444, 0.2)) no-repeat; */\n  background: radial-gradient(ellipse 50% 50%, rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));\n}\n.SpendTicket {\n  background: radial-gradient(ellipse 50% 50%, rgba(100%,0%,0%, 0.3), rgba(100%,0%,0%, 0.3), rgba(100%,100%,100%, 0.01));\n}\n/* .Task + .Task {\n  box-shadow: 0 -1px #888;\n} */\n"],"sourceRoot":""}]);
+exports.push([module.i, ".TaskTickets__TaskTickets___3pBTC {\n  height: 100%;\n  display: -ms-grid;\n  display: grid;\n  grid-template: repeat(3, 1fr) / 1fr;\n  grid-gap: 1px;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n.TaskTickets__ToAdmin___3CVSY {\n  position: absolute;\n  width: 1.1cm;\n  height: 1.1cm;\n  font-size: 1.1em;\n  line-height: 1.1cm;\n  text-align: center;\n}\n\n.TaskTickets__Admin___K0fTn {\n  width: 100%;\n  height: 100%;\n  border-collapse: collapse;\n  font-size: 14pt;\n}\n\n.TaskTickets__Admin___K0fTn td, .TaskTickets__Admin___K0fTn th {\n  border-top: 1px solid #333;\n  text-align: center;\n}\n\n.TaskTickets__Admin___K0fTn input, .TaskTickets__Admin___K0fTn textarea {\n  width: 100%;\n}\n\n.TaskTickets__Admin___K0fTn textarea {\n  height: 100%;\n  min-width: 10em;\n}\n\n.TaskTickets__Admin___K0fTn input[type=checkbox] {\n  font-size: 1cm;\n}\n\n.TaskTickets__People___2wqQ2 {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n.TaskTickets__People___2wqQ2 > .TaskTickets__Person___V2VGa {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-height: calc((100% - 4rem) / 3);\n}\n\n.TaskTickets__Person___V2VGa {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-line-pack: distribute;\n      align-content: space-around;\n  -ms-flex-pack: end;\n      justify-content: flex-end;\n  padding-right: 2em;\n  font-size: 4em;\n  background-color: rgba(100%,100%,100%, 0.1);\n  box-shadow: inset 0 0 0.3em 0.3em #222;\n}\n\n.TaskTickets__SelectedPerson___l98rL {\n  box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%;\n  background-color: #222;\n  padding: 0 1em;\n  display: -ms-grid;\n  display: grid;\n  grid:\n    \"header back\" auto\n    \"tasks tasks\" 1fr\n    / 1fr auto;\n}\n.TaskTickets__SelectedPerson___l98rL > h1 { grid-area: header; }\n.TaskTickets__SelectedPerson___l98rL > .TaskTickets__Back___1DCyV { grid-area: back; }\n.TaskTickets__SelectedPerson___l98rL > .TaskTickets__Tasks___3Uq2V { grid-area: tasks; }\n\n.TaskTickets__SelectedPerson___l98rL > .TaskTickets__Back___1DCyV {\n  width: 1.1cm;\n  height: 1.1cm;\n  font-size: 1.1em;\n  text-align: center;\n  justify-self: center;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  margin: 0.5cm;\n}\n\n.TaskTickets__SelectedPerson___l98rL > .TaskTickets__Tasks___3Uq2V {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n\n.TaskTickets__Task___3nGmz, .TaskTickets__SpendTicket___Wht7Y {\n  padding: 0.5em 1em;\n  box-shadow: inset 0 0 0.6em 0.6em #222;\n}\n.TaskTickets__Task___3nGmz {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  background-color: hsla(0deg, 0%, 50%, 0.2);\n}\n.TaskTickets__SpendTicket___Wht7Y {\n  background-color: hsla(0deg, 100%, 50%, 0.2);\n}\n", "", {"version":3,"sources":["/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,kBAAkB;EAClB,cAAc;EACd,oCAAoC;EACpC,cAAc;EACd,uBAAuB;MACnB,oBAAoB;CACzB;;AAED;EACE,mBAAmB;EACnB,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,mBAAmB;EACnB,mBAAmB;CACpB;;AAED;EACE,YAAY;EACZ,aAAa;EACb,0BAA0B;EAC1B,gBAAgB;CACjB;;AAED;EACE,2BAA2B;EAC3B,mBAAmB;CACpB;;AAED;EACE,YAAY;CACb;;AAED;EACE,aAAa;EACb,gBAAgB;CACjB;;AAED;EACE,eAAe;CAChB;;AAED;EACE,aAAa;EACb,qBAAqB;EACrB,cAAc;EACd,2BAA2B;MACvB,uBAAuB;EAC3B,4BAA4B;MACxB,8BAA8B;CACnC;AACD;EACE,qBAAqB;MACjB,aAAa;EACjB,oCAAoC;CACrC;;AAED;EACE,qBAAqB;EACrB,cAAc;EACd,wBAAwB;MACpB,oBAAoB;EACxB,uBAAuB;MACnB,oBAAoB;EACxB,+BAA+B;MAC3B,4BAA4B;EAChC,mBAAmB;MACf,0BAA0B;EAC9B,mBAAmB;EACnB,eAAe;EACf,4CAA4C;EAC5C,uCAAuC;CACxC;;AAED;EACE,uBAAuB;EACvB,mBAAmB;EACnB,OAAO;EACP,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,eAAe;EACf,kBAAkB;EAClB,cAAc;EACd;;;eAGa;CACd;AACD,4CAAuB,kBAAkB,EAAE;AAC3C,oEAA0B,gBAAgB,EAAE;AAC5C,qEAA2B,iBAAiB,EAAE;;AAE9C;EACE,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,mBAAmB;EACnB,qBAAqB;EACrB,4BAA4B;MACxB,2BAA2B;MAC3B,mBAAmB;EACvB,cAAc;CACf;;AAED;EACE,qBAAqB;EACrB,cAAc;EACd,2BAA2B;MACvB,uBAAuB;EAC3B,4BAA4B;MACxB,8BAA8B;CACnC;;AAED;EACE,mBAAmB;EACnB,uCAAuC;CACxC;AACD;EACE,qBAAqB;EACrB,cAAc;EACd,wBAAwB;MACpB,oBAAoB;EACxB,uBAAuB;MACnB,oBAAoB;EACxB,2CAA2C;CAC5C;AACD;EACE,6CAA6C;CAC9C","file":"TaskTickets.css","sourcesContent":[".TaskTickets {\n  height: 100%;\n  display: -ms-grid;\n  display: grid;\n  grid-template: repeat(3, 1fr) / 1fr;\n  grid-gap: 1px;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n.ToAdmin {\n  position: absolute;\n  width: 1.1cm;\n  height: 1.1cm;\n  font-size: 1.1em;\n  line-height: 1.1cm;\n  text-align: center;\n}\n\n.Admin {\n  width: 100%;\n  height: 100%;\n  border-collapse: collapse;\n  font-size: 14pt;\n}\n\n.Admin td, .Admin th {\n  border-top: 1px solid #333;\n  text-align: center;\n}\n\n.Admin input, .Admin textarea {\n  width: 100%;\n}\n\n.Admin textarea {\n  height: 100%;\n  min-width: 10em;\n}\n\n.Admin input[type=checkbox] {\n  font-size: 1cm;\n}\n\n.People {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n.People > .Person {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-height: calc((100% - 4rem) / 3);\n}\n\n.Person {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-line-pack: distribute;\n      align-content: space-around;\n  -ms-flex-pack: end;\n      justify-content: flex-end;\n  padding-right: 2em;\n  font-size: 4em;\n  background-color: rgba(100%,100%,100%, 0.1);\n  box-shadow: inset 0 0 0.3em 0.3em #222;\n}\n\n.SelectedPerson {\n  box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%;\n  background-color: #222;\n  padding: 0 1em;\n  display: -ms-grid;\n  display: grid;\n  grid:\n    \"header back\" auto\n    \"tasks tasks\" 1fr\n    / 1fr auto;\n}\n.SelectedPerson > h1 { grid-area: header; }\n.SelectedPerson > .Back { grid-area: back; }\n.SelectedPerson > .Tasks { grid-area: tasks; }\n\n.SelectedPerson > .Back {\n  width: 1.1cm;\n  height: 1.1cm;\n  font-size: 1.1em;\n  text-align: center;\n  justify-self: center;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  margin: 0.5cm;\n}\n\n.SelectedPerson > .Tasks {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: space-evenly;\n      justify-content: space-evenly;\n}\n\n.Task, .SpendTicket {\n  padding: 0.5em 1em;\n  box-shadow: inset 0 0 0.6em 0.6em #222;\n}\n.Task {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-align: center;\n      align-items: center;\n  background-color: hsla(0deg, 0%, 50%, 0.2);\n}\n.SpendTicket {\n  background-color: hsla(0deg, 100%, 50%, 0.2);\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
 	"TaskTickets": "TaskTickets__TaskTickets___3pBTC",
+	"ToAdmin": "TaskTickets__ToAdmin___3CVSY",
+	"Admin": "TaskTickets__Admin___K0fTn",
 	"People": "TaskTickets__People___2wqQ2",
 	"Person": "TaskTickets__Person___V2VGa",
 	"SelectedPerson": "TaskTickets__SelectedPerson___l98rL",
+	"Back": "TaskTickets__Back___1DCyV",
 	"Tasks": "TaskTickets__Tasks___3Uq2V",
 	"Task": "TaskTickets__Task___3nGmz",
 	"SpendTicket": "TaskTickets__SpendTicket___Wht7Y"
@@ -1057,7 +1060,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "html, body, #index__root___4PyOE {\n  height: 100%;\n}\n\nhtml {\n  font-size: 20pt;\n}\n\nbody {\n  font-family: sans-serif;\n  margin: 0;\n  background-color: #222;\n  color: #DDD;\n  overflow: hidden;\n}\n\n/* #root {\n  padding: 1em 3em;\n} */\n\nh1 {\n  font-size: 4rem;\n}\n\nbutton, input {\n  box-sizing: border-box;\n  font-family: inherit;\n  color: inherit;\n  background-color: transparent;\n  font-size: inherit;\n  border-radius: 5px;\n}\n\ninput[type=\"checkbox\"] {\n  width: 1em;\n  height: 1em;\n  /* margin-right: 2em; */\n  visibility: hidden;\n}\ninput[type=\"checkbox\"]::after {\n  content: \" \";\n  display: inline-block;\n  visibility: visible;\n  box-sizing: border-box;\n  width: 1em;\n  height: 1em;\n  border-radius: 3px;\n  border: 1px solid #888;\n  /* vertical-align: middle; */\n  color: #DDD;\n  text-align: center;\n  line-height: 1.088;\n}\ninput[type=\"checkbox\"]:checked::after {\n  content: \"\\2714\";\n}\n", "", {"version":3,"sources":["/Users/doug.meyer/Code/Personal/TaskTickets/src/index.css"],"names":[],"mappings":"AAAA;EACE,aAAa;CACd;;AAED;EACE,gBAAgB;CACjB;;AAED;EACE,wBAAwB;EACxB,UAAU;EACV,uBAAuB;EACvB,YAAY;EACZ,iBAAiB;CAClB;;AAED;;IAEI;;AAEJ;EACE,gBAAgB;CACjB;;AAED;EACE,uBAAuB;EACvB,qBAAqB;EACrB,eAAe;EACf,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;CACpB;;AAED;EACE,WAAW;EACX,YAAY;EACZ,wBAAwB;EACxB,mBAAmB;CACpB;AACD;EACE,aAAa;EACb,sBAAsB;EACtB,oBAAoB;EACpB,uBAAuB;EACvB,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,uBAAuB;EACvB,6BAA6B;EAC7B,YAAY;EACZ,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,iBAAa;CACd","file":"index.css","sourcesContent":["html, body, #root {\n  height: 100%;\n}\n\nhtml {\n  font-size: 20pt;\n}\n\nbody {\n  font-family: sans-serif;\n  margin: 0;\n  background-color: #222;\n  color: #DDD;\n  overflow: hidden;\n}\n\n/* #root {\n  padding: 1em 3em;\n} */\n\nh1 {\n  font-size: 4rem;\n}\n\nbutton, input {\n  box-sizing: border-box;\n  font-family: inherit;\n  color: inherit;\n  background-color: transparent;\n  font-size: inherit;\n  border-radius: 5px;\n}\n\ninput[type=\"checkbox\"] {\n  width: 1em;\n  height: 1em;\n  /* margin-right: 2em; */\n  visibility: hidden;\n}\ninput[type=\"checkbox\"]::after {\n  content: \" \";\n  display: inline-block;\n  visibility: visible;\n  box-sizing: border-box;\n  width: 1em;\n  height: 1em;\n  border-radius: 3px;\n  border: 1px solid #888;\n  /* vertical-align: middle; */\n  color: #DDD;\n  text-align: center;\n  line-height: 1.088;\n}\ninput[type=\"checkbox\"]:checked::after {\n  content: \"✔\";\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "html, body, #index__root___4PyOE {\n  height: 100%;\n}\n\nhtml {\n  font-size: 20pt;\n}\n\nbody {\n  font-family: sans-serif;\n  margin: 0;\n  background-color: #222;\n  color: #DDD;\n  overflow: hidden;\n}\n\n/* #root {\n  padding: 1em 3em;\n} */\n\nh1 {\n  font-size: 4rem;\n  margin: 0;\n}\n\nbutton, input, textarea, input[type=\"checkbox\"]::after {\n  box-sizing: border-box;\n  font-family: inherit;\n  color: inherit;\n  background-color: transparent;\n  font-size: inherit;\n  border-radius: 5px;\n  border: 1px solid #555;\n}\n\ninput[type=\"checkbox\"] {\n  width: 1em;\n  height: 1em;\n  visibility: hidden;\n}\ninput[type=\"checkbox\"]::after {\n  content: \"\\2800\"; /* <-- special character */\n  display: inline-block;\n  visibility: visible;\n  width: 1em;\n  height: 1em;\n  color: #DDD;\n  text-align: center;\n  line-height: 1em;\n}\ninput[type=\"checkbox\"]:checked::after {\n  content: \"\\2714\";\n}\n", "", {"version":3,"sources":["/Users/doug.meyer/Code/Personal/TaskTickets/src/index.css"],"names":[],"mappings":"AAAA;EACE,aAAa;CACd;;AAED;EACE,gBAAgB;CACjB;;AAED;EACE,wBAAwB;EACxB,UAAU;EACV,uBAAuB;EACvB,YAAY;EACZ,iBAAiB;CAClB;;AAED;;IAEI;;AAEJ;EACE,gBAAgB;EAChB,UAAU;CACX;;AAED;EACE,uBAAuB;EACvB,qBAAqB;EACrB,eAAe;EACf,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,uBAAuB;CACxB;;AAED;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,iBAAa,CAAC,2BAA2B;EACzC,sBAAsB;EACtB,oBAAoB;EACpB,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,iBAAiB;CAClB;AACD;EACE,iBAAa;CACd","file":"index.css","sourcesContent":["html, body, #root {\n  height: 100%;\n}\n\nhtml {\n  font-size: 20pt;\n}\n\nbody {\n  font-family: sans-serif;\n  margin: 0;\n  background-color: #222;\n  color: #DDD;\n  overflow: hidden;\n}\n\n/* #root {\n  padding: 1em 3em;\n} */\n\nh1 {\n  font-size: 4rem;\n  margin: 0;\n}\n\nbutton, input, textarea, input[type=\"checkbox\"]::after {\n  box-sizing: border-box;\n  font-family: inherit;\n  color: inherit;\n  background-color: transparent;\n  font-size: inherit;\n  border-radius: 5px;\n  border: 1px solid #555;\n}\n\ninput[type=\"checkbox\"] {\n  width: 1em;\n  height: 1em;\n  visibility: hidden;\n}\ninput[type=\"checkbox\"]::after {\n  content: \"⠀\"; /* <-- special character */\n  display: inline-block;\n  visibility: visible;\n  width: 1em;\n  height: 1em;\n  color: #DDD;\n  text-align: center;\n  line-height: 1em;\n}\ninput[type=\"checkbox\"]:checked::after {\n  content: \"✔\";\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
@@ -32369,9 +32372,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
   enterModule && enterModule(module);
 })();
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -32566,11 +32571,6 @@ var SelectedPerson = function (_PureComponent3) {
         'div',
         { className: classNames('SelectedPerson') },
         React.createElement(
-          'div',
-          { style: { position: 'absolute', top: '1em', right: '1em' }, onClick: this.handleClose },
-          '\u2573'
-        ),
-        React.createElement(
           'h1',
           null,
           name,
@@ -32580,6 +32580,11 @@ var SelectedPerson = function (_PureComponent3) {
             tickets,
             '\uD83C\uDF9F'
           )
+        ),
+        React.createElement(
+          'div',
+          { className: classNames('Back'), onClick: this.handleClose },
+          '\u2573'
         ),
         React.createElement(
           'div',
@@ -32611,140 +32616,34 @@ var SelectedPerson = function (_PureComponent3) {
   return SelectedPerson;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
 
-function mapObject(obj, fn) {
-  return Object.keys(obj).reduce(function (newObj, key) {
-    return _extends({}, newObj, _defineProperty({}, key, fn(obj[key])));
-  }, {});
-}
+var People = function (_PureComponent4) {
+  _inherits(People, _PureComponent4);
 
-function defaultState() {
-  var _sharedTasks, _bigKidTasks;
-
-  var nextTaskId = 1;
-  var sharedTasks = (_sharedTasks = {}, _defineProperty(_sharedTasks, nextTaskId++, 'Dressed / Brush Teeth / Pick-up Room'), _defineProperty(_sharedTasks, nextTaskId++, 'Be Active 30 min'), _sharedTasks);
-  var bigKidTasks = (_bigKidTasks = {}, _defineProperty(_bigKidTasks, nextTaskId++, 'Read 30 min'), _defineProperty(_bigKidTasks, nextTaskId++, 'Create 30 min'), _defineProperty(_bigKidTasks, nextTaskId++, "Mom's Choice"), _bigKidTasks);
-  var tasks = _extends({}, sharedTasks, bigKidTasks);
-  var taskCompletions = _defineProperty({}, 1 + 0, []);
-  var redemptions = [];
-  var Calvin = { tasks: Object.keys(tasks), taskCompletions: taskCompletions, redemptions: redemptions };
-  var Norah = { tasks: Object.keys(tasks), taskCompletions: taskCompletions, redemptions: redemptions };
-  var Caroline = { tasks: Object.keys(sharedTasks), taskCompletions: taskCompletions, redemptions: redemptions };
-  var people = { Calvin: Calvin, Norah: Norah, Caroline: Caroline };
-  return { tasks: tasks, people: people, selectedPersonName: null };
-}
-
-function initState() {
-  var state = void 0;
-  try {
-    var storeItem = localStorage.getItem('TaskTickets_state');
-    if (storeItem) {
-      var _JSON$parse = JSON.parse(storeItem),
-          jsonTasks = _JSON$parse.tasks,
-          jsonPeople = _JSON$parse.people;
-
-      var _people = mapObject(jsonPeople, function (_ref4) {
-        var tasks = _ref4.tasks,
-            taskCompletions = _ref4.taskCompletions,
-            redemptions = _ref4.redemptions;
-        return {
-          tasks: tasks,
-          taskCompletions: mapObject(taskCompletions, function (tcs) {
-            return tcs.map(function (d) {
-              return new Date(d);
-            });
-          }),
-          redemptions: redemptions.map(function (d) {
-            return new Date(d);
-          })
-        };
-      });
-
-      state = { tasks: jsonTasks, people: _people, selectedPersonName: null };
-    }
-  } catch (e) {
-    console.error('initState error', e);
-  }
-  return state || defaultState();
-}
-
-var TaskTickets = function (_PureComponent4) {
-  _inherits(TaskTickets, _PureComponent4);
-
-  function TaskTickets() {
-    var _ref5;
+  function People() {
+    var _ref4;
 
     var _temp4, _this5, _ret4;
 
-    _classCallCheck(this, TaskTickets);
+    _classCallCheck(this, People);
 
     for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
       args[_key4] = arguments[_key4];
     }
 
-    return _ret4 = (_temp4 = (_this5 = _possibleConstructorReturn(this, (_ref5 = TaskTickets.__proto__ || Object.getPrototypeOf(TaskTickets)).call.apply(_ref5, [this].concat(args))), _this5), _this5.state = initState(), _this5.handleSelectPerson = function (selectedPersonName) {
-      _this5.setState({ selectedPersonName: selectedPersonName }, _this5.persistState);
-    }, _this5.handleComplete = function (personName, taskId) {
-      _this5.setState(function (_ref6) {
-        var people = _ref6.people;
-
-        var person = people[personName];
-        if (!person) return {};
-
-        return {
-          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
-            taskCompletions: _extends({}, person.taskCompletions, _defineProperty({}, taskId, [].concat(_toConsumableArray(person.taskCompletions[taskId] || []), [new Date()])))
-          })))
-        };
-      }, _this5.persistState);
-    }, _this5.handleUnComplete = function (personName, taskId) {
-      var today = new Date();
-      _this5.setState(function (_ref7) {
-        var people = _ref7.people;
-
-        var person = people[personName];
-        if (!person) return {};
-        var taskCompletion = person.taskCompletions[taskId].find(function (when) {
-          return when.toDateString() === today.toDateString();
-        });
-        if (!taskCompletion) return {};
-        var taskCompletionIndex = person.taskCompletions[taskId].indexOf(taskCompletion);
-
-        return {
-          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
-            taskCompletions: _extends({}, person.taskCompletions, _defineProperty({}, taskId, [].concat(_toConsumableArray(person.taskCompletions[taskId].slice(0, taskCompletionIndex)), _toConsumableArray(person.taskCompletions[taskId].slice(taskCompletionIndex + 1)))))
-          })))
-        };
-      }, _this5.persistState);
-    }, _this5.handleRedeem = function (personName) {
-      _this5.setState(function (_ref8) {
-        var people = _ref8.people;
-
-        var person = people[personName];
-        if (!person) return {};
-
-        return {
-          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
-            redemptions: [].concat(_toConsumableArray(person.redemptions), [new Date()])
-          })))
-        };
-      }, _this5.persistState);
-    }, _temp4), _possibleConstructorReturn(_this5, _ret4);
+    return _ret4 = (_temp4 = (_this5 = _possibleConstructorReturn(this, (_ref4 = People.__proto__ || Object.getPrototypeOf(People)).call.apply(_ref4, [this].concat(args))), _this5), _this5.state = { selectedPersonName: null }, _this5.handleSelectPerson = function (selectedPersonName) {
+      _this5.setState({ selectedPersonName: selectedPersonName });
+    }, _this5.handleComplete = _this5.props.onComplete, _this5.handleUnComplete = _this5.props.onUnComplete, _this5.handleRedeem = _this5.props.onRedeem, _temp4), _possibleConstructorReturn(_this5, _ret4);
   }
 
-  _createClass(TaskTickets, [{
-    key: 'persistState',
-    value: function persistState() {
-      localStorage.setItem('TaskTickets_state', JSON.stringify(this.state));
-    }
-  }, {
+  _createClass(People, [{
     key: 'render',
     value: function render() {
       var _this6 = this;
 
-      var _state = this.state,
-          tasks = _state.tasks,
-          people = _state.people,
-          selectedPersonName = _state.selectedPersonName;
+      var _props4 = this.props,
+          tasks = _props4.tasks,
+          people = _props4.people;
+      var selectedPersonName = this.state.selectedPersonName;
 
       var selectedPerson = selectedPersonName && people[selectedPersonName];
 
@@ -32776,6 +32675,484 @@ var TaskTickets = function (_PureComponent4) {
     }
   }]);
 
+  return People;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
+
+var Admin = function (_PureComponent5) {
+  _inherits(Admin, _PureComponent5);
+
+  function Admin() {
+    var _ref5;
+
+    var _temp5, _this7, _ret5;
+
+    _classCallCheck(this, Admin);
+
+    for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    return _ret5 = (_temp5 = (_this7 = _possibleConstructorReturn(this, (_ref5 = Admin.__proto__ || Object.getPrototypeOf(Admin)).call.apply(_ref5, [this].concat(args))), _this7), _this7.personKeys = new WeakMap(), _this7.lastPersonKey = 0, _this7.state = { selectedPersonName: null }, _this7.handleAddPerson = _this7.props.onAddPerson, _this7.handleAddTask = _this7.props.onAddTask, _this7.handleRenamePerson = _this7.props.onRenamePerson, _this7.handleRenameTask = _this7.props.onRenameTask, _this7.handleTogglePersonTask = _this7.props.onTogglePersonTask, _this7.handleRemovePerson = _this7.props.onRemovePerson, _this7.handleRemoveTask = _this7.props.onRemoveTask, _this7.handleClose = _this7.props.onClose, _temp5), _possibleConstructorReturn(_this7, _ret5);
+  }
+
+  _createClass(Admin, [{
+    key: 'renderPerson',
+    value: function renderPerson(person, personName) {
+      var _this8 = this;
+
+      var tasks = this.props.tasks;
+
+
+      var events = [].concat(_toConsumableArray(person.redemptions.map(function (when) {
+        return { when: when, what: 'Redeemed a ticket' };
+      })), _toConsumableArray(Object.keys(person.taskCompletions).reduce(function (acc, taskId) {
+        return [].concat(_toConsumableArray(acc), _toConsumableArray(person.taskCompletions[taskId].map(function (when) {
+          return { when: when, what: 'Completed: ' + (tasks[taskId] || 'removed task') };
+        })));
+      }, []))).sort(function (e1, e2) {
+        return e2.when - e1.when;
+      });
+
+      return React.createElement(
+        __WEBPACK_IMPORTED_MODULE_0_react__["Fragment"],
+        null,
+        React.createElement(
+          'div',
+          { style: { position: 'absolute', right: 0 }, onClick: function onClick() {
+              return _this8.setState({ selectedPersonName: null });
+            } },
+          '\u2573'
+        ),
+        React.createElement(
+          'h1',
+          null,
+          personName
+        ),
+        events.map(function (_ref6, index) {
+          var when = _ref6.when,
+              what = _ref6.what;
+          return React.createElement(
+            __WEBPACK_IMPORTED_MODULE_0_react__["Fragment"],
+            { key: when.toJSON() },
+            !events[index - 1] || when.toDateString() !== events[index - 1].when.toDateString() ? React.createElement(
+              'time',
+              { dateTime: when.toDateString() },
+              when.toDateString()
+            ) : false,
+            React.createElement(
+              'div',
+              null,
+              React.createElement(
+                'time',
+                { dateTime: when.toJSON(), style: { display: 'inline-block', width: '8em', textAlign: 'right' } },
+                when.toLocaleTimeString()
+              ),
+              ' - ',
+              what
+            )
+          );
+        })
+      );
+    }
+  }, {
+    key: 'renderPeople',
+    value: function renderPeople() {
+      var _this9 = this;
+
+      var _props5 = this.props,
+          people = _props5.people,
+          tasks = _props5.tasks;
+
+      Object.values(people).filter(function (person) {
+        return !_this9.personKeys.has(person);
+      }).forEach(function (person) {
+        return _this9.personKeys.set(person, _this9.lastPersonKey++);
+      });
+
+      return React.createElement(
+        'table',
+        { className: classNames('Admin') },
+        React.createElement(
+          'tbody',
+          null,
+          React.createElement(
+            'tr',
+            null,
+            React.createElement(
+              'td',
+              null,
+              React.createElement(
+                'div',
+                { className: classNames('Back'), onClick: this.handleClose },
+                '\u2573'
+              )
+            ),
+            Object.keys(people).map(function (name) {
+              return React.createElement(
+                'th',
+                { key: _this9.personKeys.get(people[name]) },
+                React.createElement('input', {
+                  value: name,
+                  onChange: function onChange(_ref7) {
+                    var value = _ref7.target.value;
+                    return _this9.handleRenamePerson(name, value);
+                  }
+                }),
+                React.createElement(
+                  'a',
+                  { onClick: function onClick() {
+                      return _this9.setState({ selectedPersonName: name });
+                    } },
+                  'show activity'
+                )
+              );
+            }),
+            React.createElement(
+              'th',
+              null,
+              React.createElement(
+                'button',
+                { onClick: this.handleAddPerson },
+                'new person'
+              )
+            )
+          ),
+          Object.keys(tasks).map(function (taskId) {
+            return React.createElement(
+              'tr',
+              { key: taskId },
+              React.createElement(
+                'td',
+                null,
+                React.createElement('textarea', {
+                  value: tasks[taskId],
+                  onChange: function onChange(_ref8) {
+                    var value = _ref8.target.value;
+                    return _this9.handleRenameTask(taskId, value);
+                  }
+                })
+              ),
+              Object.keys(people).map(function (personName) {
+                return React.createElement(
+                  'td',
+                  { key: personName },
+                  React.createElement('input', { type: 'checkbox', checked: people[personName].tasks.includes(taskId), onChange: function onChange() {
+                      return _this9.handleTogglePersonTask(personName, taskId);
+                    } })
+                );
+              }),
+              React.createElement(
+                'td',
+                null,
+                React.createElement(
+                  'button',
+                  { onClick: function onClick() {
+                      return _this9.handleRemoveTask(taskId);
+                    } },
+                  'remove task'
+                )
+              )
+            );
+          }),
+          React.createElement(
+            'tr',
+            null,
+            React.createElement(
+              'td',
+              null,
+              React.createElement(
+                'button',
+                { onClick: this.handleAddTask },
+                'new task'
+              )
+            ),
+            Object.keys(people).map(function (name) {
+              return React.createElement(
+                'th',
+                { key: _this9.personKeys.get(people[name]) },
+                React.createElement(
+                  'button',
+                  { onClick: function onClick() {
+                      return _this9.handleRemovePerson(name);
+                    } },
+                  'remove ',
+                  name
+                )
+              );
+            }),
+            React.createElement('td', null)
+          )
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var people = this.props.people;
+      var selectedPersonName = this.state.selectedPersonName;
+
+      var selectedPerson = selectedPersonName && people[selectedPersonName];
+
+      return selectedPerson ? this.renderPerson(selectedPerson, selectedPersonName) : this.renderPeople();
+    }
+  }, {
+    key: '__reactstandin__regenerateByEval',
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
+    }
+  }]);
+
+  return Admin;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
+
+function mapObject(obj, fn) {
+  return Object.keys(obj).reduce(function (newObj, key) {
+    return _extends({}, newObj, _defineProperty({}, key, fn(obj[key])));
+  }, {});
+}
+
+function defaultState() {
+  var _sharedTasks, _bigKidTasks;
+
+  var nextTaskId = 1;
+  var sharedTasks = (_sharedTasks = {}, _defineProperty(_sharedTasks, nextTaskId++, 'Dressed / Brush Teeth / Pick-up Room'), _defineProperty(_sharedTasks, nextTaskId++, 'Be Active 30 min'), _sharedTasks);
+  var bigKidTasks = (_bigKidTasks = {}, _defineProperty(_bigKidTasks, nextTaskId++, 'Read 30 min'), _defineProperty(_bigKidTasks, nextTaskId++, 'Create 30 min'), _defineProperty(_bigKidTasks, nextTaskId++, "Mom's Choice"), _bigKidTasks);
+  var tasks = _extends({}, sharedTasks, bigKidTasks);
+  var taskCompletions = _defineProperty({}, 1 + 0, []);
+  var redemptions = [];
+  var Billy = { tasks: Object.keys(tasks), taskCompletions: taskCompletions, redemptions: redemptions };
+  var Susan = { tasks: Object.keys(tasks), taskCompletions: taskCompletions, redemptions: redemptions };
+  var Theodore = { tasks: Object.keys(sharedTasks), taskCompletions: taskCompletions, redemptions: redemptions };
+  var people = { Billy: Billy, Susan: Susan, Theodore: Theodore };
+  return { tasks: tasks, people: people, inAdmin: true };
+}
+
+function initState() {
+  var state = void 0;
+  var lastWeek = new Date(Date.now() - 1000 * 60 * 60 * 24 * 7);
+  try {
+    var storeItem = localStorage.getItem('TaskTickets_state');
+    if (storeItem) {
+      var _JSON$parse = JSON.parse(storeItem),
+          jsonTasks = _JSON$parse.tasks,
+          jsonPeople = _JSON$parse.people;
+
+      var _people = mapObject(jsonPeople, function (_ref9) {
+        var tasks = _ref9.tasks,
+            taskCompletions = _ref9.taskCompletions,
+            redemptions = _ref9.redemptions;
+        return {
+          tasks: tasks,
+          taskCompletions: mapObject(taskCompletions, function (tcs) {
+            return tcs.map(function (d) {
+              return new Date(d);
+            }).filter(function (d) {
+              return d > lastWeek;
+            });
+          }),
+          redemptions: redemptions.map(function (d) {
+            return new Date(d);
+          }).filter(function (d) {
+            return d > lastWeek;
+          })
+        };
+      });
+
+      state = { tasks: jsonTasks, people: _people, inAdmin: false };
+    }
+  } catch (e) {
+    console.error('initState error', e); // eslint-disable-line no-console
+  }
+  return state || defaultState();
+}
+
+var TaskTickets = function (_PureComponent6) {
+  _inherits(TaskTickets, _PureComponent6);
+
+  function TaskTickets() {
+    var _ref10;
+
+    var _temp6, _this10, _ret6;
+
+    _classCallCheck(this, TaskTickets);
+
+    for (var _len6 = arguments.length, args = Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+      args[_key6] = arguments[_key6];
+    }
+
+    return _ret6 = (_temp6 = (_this10 = _possibleConstructorReturn(this, (_ref10 = TaskTickets.__proto__ || Object.getPrototypeOf(TaskTickets)).call.apply(_ref10, [this].concat(args))), _this10), _this10.state = initState(), _this10.handleComplete = function (personName, taskId) {
+      _this10.setState(function (_ref11) {
+        var people = _ref11.people;
+
+        var person = people[personName];
+        if (!person) return {};
+
+        return {
+          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
+            taskCompletions: _extends({}, person.taskCompletions, _defineProperty({}, taskId, [].concat(_toConsumableArray(person.taskCompletions[taskId] || []), [new Date()])))
+          })))
+        };
+      }, _this10.persistState);
+    }, _this10.handleUnComplete = function (personName, taskId) {
+      var today = new Date();
+      _this10.setState(function (_ref12) {
+        var people = _ref12.people;
+
+        var person = people[personName];
+        if (!person) return {};
+        var taskCompletion = person.taskCompletions[taskId].find(function (when) {
+          return when.toDateString() === today.toDateString();
+        });
+        if (!taskCompletion) return {};
+        var taskCompletionIndex = person.taskCompletions[taskId].indexOf(taskCompletion);
+
+        return {
+          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
+            taskCompletions: _extends({}, person.taskCompletions, _defineProperty({}, taskId, [].concat(_toConsumableArray(person.taskCompletions[taskId].slice(0, taskCompletionIndex)), _toConsumableArray(person.taskCompletions[taskId].slice(taskCompletionIndex + 1)))))
+          })))
+        };
+      }, _this10.persistState);
+    }, _this10.handleRedeem = function (personName) {
+      _this10.setState(function (_ref13) {
+        var people = _ref13.people;
+
+        var person = people[personName];
+        if (!person) return {};
+
+        return {
+          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, {
+            redemptions: [].concat(_toConsumableArray(person.redemptions), [new Date()])
+          })))
+        };
+      }, _this10.persistState);
+    }, _this10.handleToAdmin = function () {
+      _this10.setState({ inAdmin: true });
+    }, _this10.handleCloseAdmin = function () {
+      _this10.setState({ inAdmin: false });
+    }, _this10.handleAddPerson = function () {
+      _this10.setState(function (_ref14) {
+        var people = _ref14.people;
+        return {
+          people: _extends({}, people, {
+            'new Person': { tasks: [], taskCompletions: {}, redemptions: [] }
+          })
+        };
+      }, _this10.persistState);
+    }, _this10.handleAddTask = function () {
+      _this10.setState(function (_ref15) {
+        var tasks = _ref15.tasks;
+        return {
+          tasks: _extends({}, tasks, _defineProperty({}, Math.max.apply(Math, _toConsumableArray(Object.keys(tasks))) + 1, 'new Task'))
+        };
+      }, _this10.persistState);
+    }, _this10.handleRenamePerson = function (oldName, newName) {
+      _this10.setState(function (_ref16) {
+        var people = _ref16.people;
+        return {
+          people: Object.keys(people).reduce(function (newPeople, personName) {
+            return _extends({}, newPeople, _defineProperty({}, personName === oldName ? newName : personName, people[personName]));
+          }, {})
+        };
+      }, _this10.persistState);
+    }, _this10.handleRenameTask = function (taskId, newName) {
+      _this10.setState(function (_ref17) {
+        var tasks = _ref17.tasks;
+        return {
+          tasks: _extends({}, tasks, _defineProperty({}, taskId, newName))
+        };
+      }, _this10.persistState);
+    }, _this10.handleTogglePersonTask = function (personName, taskId) {
+      _this10.setState(function (_ref18) {
+        var people = _ref18.people;
+
+        var person = people[personName];
+        var taskIndex = person.tasks.indexOf(taskId);
+        var tasks = taskIndex === -1 ? [].concat(_toConsumableArray(person.tasks), [taskId]) : [].concat(_toConsumableArray(person.tasks.slice(0, taskIndex)), _toConsumableArray(person.tasks.slice(taskIndex + 1)));
+
+        return {
+          people: _extends({}, people, _defineProperty({}, personName, _extends({}, person, { tasks: tasks })))
+        };
+      }, _this10.persistState);
+    }, _this10.handleRemovePerson = function (personName) {
+      _this10.setState(function (_ref19) {
+        var _ref19$people = _ref19.people,
+            _person = _ref19$people[personName],
+            otherPeople = _objectWithoutProperties(_ref19$people, [personName]);
+
+        return {
+          people: _extends({}, otherPeople)
+        };
+      }, _this10.persistState);
+    }, _this10.handleRemoveTask = function (taskId) {
+      _this10.setState(function (_ref20) {
+        var people = _ref20.people,
+            _ref20$tasks = _ref20.tasks,
+            _task = _ref20$tasks[taskId],
+            otherTasks = _objectWithoutProperties(_ref20$tasks, [taskId]);
+
+        return {
+          tasks: _extends({}, otherTasks),
+          people: mapObject(people, function (person) {
+            return _extends({}, person, {
+              tasks: person.tasks.filter(function (id) {
+                return id !== taskId;
+              })
+            });
+          })
+        };
+      }, _this10.persistState);
+    }, _temp6), _possibleConstructorReturn(_this10, _ret6);
+  }
+
+  _createClass(TaskTickets, [{
+    key: 'persistState',
+    value: function persistState() {
+      localStorage.setItem('TaskTickets_state', JSON.stringify(this.state));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _state = this.state,
+          tasks = _state.tasks,
+          people = _state.people,
+          inAdmin = _state.inAdmin;
+
+
+      return inAdmin ? React.createElement(Admin, {
+        tasks: tasks,
+        people: people,
+        onAddPerson: this.handleAddPerson,
+        onAddTask: this.handleAddTask,
+        onRenamePerson: this.handleRenamePerson,
+        onRenameTask: this.handleRenameTask,
+        onTogglePersonTask: this.handleTogglePersonTask,
+        onRemovePerson: this.handleRemovePerson,
+        onRemoveTask: this.handleRemoveTask,
+        onClose: this.handleCloseAdmin
+      }) : React.createElement(
+        __WEBPACK_IMPORTED_MODULE_0_react__["Fragment"],
+        null,
+        React.createElement(
+          'div',
+          { className: classNames('ToAdmin'), onClick: this.handleToAdmin },
+          '\u2699'
+        ),
+        React.createElement(People, {
+          tasks: tasks,
+          people: people,
+          onComplete: this.handleComplete,
+          onUnComplete: this.handleUnComplete,
+          onRedeem: this.handleRedeem
+        })
+      );
+    }
+  }, {
+    key: '__reactstandin__regenerateByEval',
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
+    }
+  }]);
+
   return TaskTickets;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
 
@@ -32796,6 +33173,8 @@ var _default = TaskTickets;
   reactHotLoader.register(Person, 'Person', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
   reactHotLoader.register(Task, 'Task', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
   reactHotLoader.register(SelectedPerson, 'SelectedPerson', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
+  reactHotLoader.register(People, 'People', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
+  reactHotLoader.register(Admin, 'Admin', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
   reactHotLoader.register(mapObject, 'mapObject', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
   reactHotLoader.register(defaultState, 'defaultState', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');
   reactHotLoader.register(initState, 'initState', '/Users/doug.meyer/Code/Personal/TaskTickets/src/TaskTickets.js');

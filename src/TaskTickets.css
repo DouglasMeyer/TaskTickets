@@ -4,8 +4,40 @@
   grid-template: repeat(3, 1fr) / 1fr;
   grid-gap: 1px;
   align-items: center;
-  /* justify-items: center; */
-  /* background-color: #CCC; */
+}
+
+.ToAdmin {
+  position: absolute;
+  width: 1.1cm;
+  height: 1.1cm;
+  font-size: 1.1em;
+  line-height: 1.1cm;
+  text-align: center;
+}
+
+.Admin {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-size: 14pt;
+}
+
+.Admin td, .Admin th {
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.Admin input, .Admin textarea {
+  width: 100%;
+}
+
+.Admin textarea {
+  height: 100%;
+  min-width: 10em;
+}
+
+.Admin input[type=checkbox] {
+  font-size: 1cm;
 }
 
 .People {
@@ -27,14 +59,9 @@
   justify-content: flex-end;
   padding-right: 2em;
   font-size: 4em;
-  background-image: linear-gradient(rgba(100%,100%,100%, 0.01), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));
-  /* background-color: #333; */
-  /* margin-top: 1em; */
-  /* margin-bottom: 1em; */
+  background-color: rgba(100%,100%,100%, 0.1);
+  box-shadow: inset 0 0 0.3em 0.3em #222;
 }
-/* .Person + .Person {
-  box-shadow: 0 -1px #888;
-} */
 
 .SelectedPerson {
   box-sizing: border-box;
@@ -44,13 +71,25 @@
   width: 100%;
   background-color: #222;
   padding: 0 1em;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid:
+    "header back" auto
+    "tasks tasks" 1fr
+    / 1fr auto;
 }
+.SelectedPerson > h1 { grid-area: header; }
+.SelectedPerson > .Back { grid-area: back; }
+.SelectedPerson > .Tasks { grid-area: tasks; }
 
-/* .SelectedPerson > .Task {
-  flex-grow: 1;
-} */
+.SelectedPerson > .Back {
+  width: 1.1cm;
+  height: 1.1cm;
+  font-size: 1.1em;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  margin: 0.5cm;
+}
 
 .SelectedPerson > .Tasks {
   display: flex;
@@ -58,26 +97,16 @@
   justify-content: space-evenly;
 }
 
-/* .SelectedPerson .Tickets {
-  float: right;
-} */
-
 .Task, .SpendTicket {
   padding: 0.5em 1em;
-  margin-bottom: 1em;
-  /* background: radial-gradient(ellipse 50% 50%, rgba(currentColor, 0.8), rgba(#444, 0.8), rgba(#444, 0.2)); */
+  box-shadow: inset 0 0 0.6em 0.6em #222;
 }
 .Task {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* background-image: linear-gradient(rgba(#444, 0.2), rgba(#444, 0.8), rgba(#444, 0.2)); */
-  /* background: radial-gradient(rgba(#444, 0.8), rgba(#444, 0.2)) no-repeat; */
-  background: radial-gradient(ellipse 50% 50%, rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.1), rgba(100%,100%,100%, 0.01));
+  background-color: hsla(0deg, 0%, 50%, 0.2);
 }
 .SpendTicket {
-  background: radial-gradient(ellipse 50% 50%, rgba(100%,0%,0%, 0.3), rgba(100%,0%,0%, 0.3), rgba(100%,100%,100%, 0.01));
+  background-color: hsla(0deg, 100%, 50%, 0.2);
 }
-/* .Task + .Task {
-  box-shadow: 0 -1px #888;
-} */
