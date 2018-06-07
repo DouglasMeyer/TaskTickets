@@ -18,6 +18,7 @@ type State = {
 }
 
 type PersonProps = {
+  today: string,
   person: PersonType,
   name: string,
   onSelectPerson: (personName: string) => void
@@ -30,8 +31,7 @@ class Person extends PureComponent<PersonProps> {
   }
 
   render() {
-    const { name, person: { taskCompletions, redemptions } } = this.props;
-    const today = new Date().toDateString();
+    const { today, name, person: { taskCompletions, redemptions } } = this.props;
     const todaysCompletions = Object.values(taskCompletions)
       .reduce((a, b) => a.concat(b), [])
       .filter((d:any) => d.toDateString() === today);
@@ -69,6 +69,7 @@ class Task extends PureComponent<TaskProps> {
 }
 
 type SelectedPersonProps = {
+  today: string,
   name: string,
   person: PersonType,
   tasks: $PropertyType<State, 'tasks'>,
@@ -77,7 +78,6 @@ type SelectedPersonProps = {
   onSelectPerson: (personName?: string) => void,
   onRedeem: (personName: string) => void
 }
-
 class SelectedPerson extends PureComponent<SelectedPersonProps> {
   handleComplete = (taskId: number) => {
     const { name, onComplete } = this.props;
@@ -97,11 +97,11 @@ class SelectedPerson extends PureComponent<SelectedPersonProps> {
 
   render() {
     const {
+      today,
       name,
       tasks,
       person: { taskCompletions, redemptions, tasks: personTasks },
     } = this.props;
-    const today = new Date().toDateString();
     const todaysCompletions = Object.values(taskCompletions)
       .reduce((a, b) => a.concat(b), [])
       .filter((d:any) => d.toDateString() === today);
@@ -144,10 +144,21 @@ type PeopleProps = {
   onUnComplete: (personName: string, taskId: number) => void,
   onRedeem: (personName: string) => void
 }
-type PeopleState = { selectedPersonName: ?string }
+type PeopleState = { selectedPersonName: ?string, today: string }
 
 class People extends PureComponent<PeopleProps, PeopleState> {
-  state = { selectedPersonName: null }
+  state = { selectedPersonName: null, today: new Date().toDateString() }
+  todayInterval:IntervalID
+  updateToday = () => { this.setState({ today: new Date().toDateString() }); }
+  componentDidMount() {
+    this.updateToday();
+    this.todayInterval = setInterval(this.updateToday, 1000 * 60);
+    window.addEventListener('focus', this.updateToday);
+  }
+  componentWillUnmount() {
+    clearInterval(this.todayInterval);
+    window.removeEventListener('focus', this.updateToday);
+  }
 
   handleSelectPerson = (selectedPersonName?:string) => {
     this.setState({ selectedPersonName });
@@ -158,12 +169,13 @@ class People extends PureComponent<PeopleProps, PeopleState> {
 
   render() {
     const { tasks, people } = this.props;
-    const { selectedPersonName } = this.state;
+    const { selectedPersonName, today } = this.state;
     const selectedPerson = selectedPersonName && people[selectedPersonName];
 
     return <div className={classNames('People')}>
       { Object.keys(people).map(personName =>
         <Person key={personName}
+          today={today}
           person={people[personName]}
           name={personName}
           onSelectPerson={this.handleSelectPerson}
@@ -171,6 +183,7 @@ class People extends PureComponent<PeopleProps, PeopleState> {
       ) }
       { selectedPersonName && selectedPerson
         ? <SelectedPerson
+          today={today}
           person={selectedPerson}
           name={selectedPersonName}
           tasks={tasks}

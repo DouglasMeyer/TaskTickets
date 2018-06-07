@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "005d09f8fc2d226118fd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26d9fcc5f96613d4e36e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -32417,12 +32417,12 @@ var Person = function (_PureComponent) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          today = _props.today,
           name = _props.name,
           _props$person = _props.person,
           taskCompletions = _props$person.taskCompletions,
           redemptions = _props$person.redemptions;
 
-      var today = new Date().toDateString();
       var todaysCompletions = Object.values(taskCompletions).reduce(function (a, b) {
         return a.concat(b);
       }, []).filter(function (d) {
@@ -32549,6 +32549,7 @@ var SelectedPerson = function (_PureComponent3) {
       var _this4 = this;
 
       var _props3 = this.props,
+          today = _props3.today,
           name = _props3.name,
           tasks = _props3.tasks,
           _props3$person = _props3.person,
@@ -32556,7 +32557,6 @@ var SelectedPerson = function (_PureComponent3) {
           redemptions = _props3$person.redemptions,
           personTasks = _props3$person.tasks;
 
-      var today = new Date().toDateString();
       var todaysCompletions = Object.values(taskCompletions).reduce(function (a, b) {
         return a.concat(b);
       }, []).filter(function (d) {
@@ -32630,12 +32630,27 @@ var People = function (_PureComponent4) {
       args[_key4] = arguments[_key4];
     }
 
-    return _ret4 = (_temp4 = (_this5 = _possibleConstructorReturn(this, (_ref4 = People.__proto__ || Object.getPrototypeOf(People)).call.apply(_ref4, [this].concat(args))), _this5), _this5.state = { selectedPersonName: null }, _this5.handleSelectPerson = function (selectedPersonName) {
+    return _ret4 = (_temp4 = (_this5 = _possibleConstructorReturn(this, (_ref4 = People.__proto__ || Object.getPrototypeOf(People)).call.apply(_ref4, [this].concat(args))), _this5), _this5.state = { selectedPersonName: null, today: new Date().toDateString() }, _this5.updateToday = function () {
+      _this5.setState({ today: new Date().toDateString() });
+    }, _this5.handleSelectPerson = function (selectedPersonName) {
       _this5.setState({ selectedPersonName: selectedPersonName });
     }, _this5.handleComplete = _this5.props.onComplete, _this5.handleUnComplete = _this5.props.onUnComplete, _this5.handleRedeem = _this5.props.onRedeem, _temp4), _possibleConstructorReturn(_this5, _ret4);
   }
 
   _createClass(People, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.updateToday();
+      this.todayInterval = setInterval(this.updateToday, 1000 * 60);
+      window.addEventListener('focus', this.updateToday);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearInterval(this.todayInterval);
+      window.removeEventListener('focus', this.updateToday);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this6 = this;
@@ -32643,7 +32658,9 @@ var People = function (_PureComponent4) {
       var _props4 = this.props,
           tasks = _props4.tasks,
           people = _props4.people;
-      var selectedPersonName = this.state.selectedPersonName;
+      var _state = this.state,
+          selectedPersonName = _state.selectedPersonName,
+          today = _state.today;
 
       var selectedPerson = selectedPersonName && people[selectedPersonName];
 
@@ -32652,12 +32669,14 @@ var People = function (_PureComponent4) {
         { className: classNames('People') },
         Object.keys(people).map(function (personName) {
           return React.createElement(Person, { key: personName,
+            today: today,
             person: people[personName],
             name: personName,
             onSelectPerson: _this6.handleSelectPerson
           });
         }),
         selectedPersonName && selectedPerson ? React.createElement(SelectedPerson, {
+          today: today,
           person: selectedPerson,
           name: selectedPersonName,
           tasks: tasks,
@@ -33112,10 +33131,10 @@ var TaskTickets = function (_PureComponent6) {
   }, {
     key: 'render',
     value: function render() {
-      var _state = this.state,
-          tasks = _state.tasks,
-          people = _state.people,
-          inAdmin = _state.inAdmin;
+      var _state2 = this.state,
+          tasks = _state2.tasks,
+          people = _state2.people,
+          inAdmin = _state2.inAdmin;
 
 
       return inAdmin ? React.createElement(Admin, {
